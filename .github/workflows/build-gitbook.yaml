@@ -18,7 +18,7 @@ jobs:
       - name: Install Dependencies version
         run: npm --version
       - name: 2. setup nodejs...
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v1
         with:
           node-version: '12'
       - name: Install Dependencies
