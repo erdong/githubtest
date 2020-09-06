@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
 # 安装依赖
-      - name: Install Dependencies
+      - name: Install Dependencies version
         run: npm --version
-#      - name: Install Dependencies
-#        run: npm install gitbook-cli -g
+      - name: Install Dependencies
+        run: npm install gitbook-cli -g
 #
 ## 检出代#码
 #      - name: Checkout
