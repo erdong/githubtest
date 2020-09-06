@@ -16,5 +16,5 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/chectout@v2
+        uses: actions/chectout@master
           
