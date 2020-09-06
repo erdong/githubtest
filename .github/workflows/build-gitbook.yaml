@@ -17,9 +17,6 @@ jobs:
 # 安装依赖
       - name: Install Dependencies version
         run: npm --version
-## 检出代#码
-      - name: Checkout
-        uses: actions/chectout@v2
       - name: 2. setup nodejs...
         uses: actions/setup-node@v1
         with:
@@ -27,6 +24,9 @@ jobs:
       - name: Install Dependencies
         run: npm install gitbook-cli -g && gitbook install pageview-count  && gitbook install back-to-top-button 
 
+## 检出代#码
+      - name: Checkout
+        uses: actions/checkout@v2
 #          
 ## 清空目#录
 #      - name: Clean temp directory
