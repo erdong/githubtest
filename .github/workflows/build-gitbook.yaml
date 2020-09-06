@@ -17,6 +17,8 @@ jobs:
 # 安装依赖
       - name: Install Dependencies version
         run: npm --version
+      - name: 2. setup nodejs...
+        uses: actions/setup-node@v1
       - name: Install Dependencies
         run: npm install gitbook-cli -g
 #
