@@ -20,7 +20,7 @@ jobs:
       - name: 2. setup nodejs...
         uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          node-version: '6'
       - name: Install Dependencies
         run: npm install gitbook-cli -g && gitbook install pageview-count  && gitbook install back-to-top-button 
 
