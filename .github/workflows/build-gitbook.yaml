@@ -14,7 +14,15 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
     steps:
+# 安装依赖
+      - name: Install Dependencies
+        run: npm install gitbook-cli -g
 
+# 检出代码
       - name: Checkout
         uses: actions/chectout@master
           
+# 清空目录
+      - name: Clean temp directory
+        run: rm -rf *
+        working-directory: ./docs
