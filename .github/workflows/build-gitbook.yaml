@@ -18,10 +18,12 @@ jobs:
       - name: Install Dependencies version
         run: npm --version
       - name: 2. setup nodejs...
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
       - name: Install Dependencies
-        run: npm install gitbook-cli -g
-#
+        run: npm install gitbook-cli -g && npm install pageview-count -g && npm install back-to-top-button -g
+
 ## 检出代#码
 #      - name: Checkout
 #        uses: actions/chectout@master
