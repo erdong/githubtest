@@ -16,13 +16,15 @@ jobs:
     steps:
 # 安装依赖
       - name: Install Dependencies
-        run: npm install gitbook-cli -g
-
-# 检出代码
-      - name: Checkout
-        uses: actions/chectout@master
-          
-# 清空目录
-      - name: Clean temp directory
-        run: rm -rf *
-        working-directory: ./docs
+        run: npm --version
+#      - name: Install Dependencies
+#        run: npm install gitbook-cli -g
+#
+## 检出代#码
+#      - name: Checkout
+#        uses: actions/chectout@master
+#          
+## 清空目#录
+#      - name: Clean temp directory
+#        run: rm -rf *
+#        working-directory: ./docs
