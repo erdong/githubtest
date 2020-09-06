@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '12'
       - name: Install Dependencies
-        run: npm install gitbook-cli -g && npm install pageview-count -g && npm install back-to-top-button -g
+        run: npm install gitbook-cli -g && gitbook install pageview-count  && gitbook install back-to-top-button 
 
 ## 检出代#码
 #      - name: Checkout
