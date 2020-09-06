@@ -25,10 +25,14 @@ jobs:
         run: npm install gitbook-cli -g && gitbook install pageview-count  && gitbook install back-to-top-button 
 
 ## 检出代#码
-#      - name: Checkout
-#        uses: actions/chectout@master
+      - name: Checkout
+        uses: actions/chectout@master
 #          
 ## 清空目#录
 #      - name: Clean temp directory
 #        run: rm -rf *
 #        working-directory: ./docs
+      - name: build
+        run: gitbook build  && ls
+#
+#
