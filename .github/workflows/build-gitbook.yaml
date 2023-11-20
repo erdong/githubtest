@@ -1,42 +1,25 @@
-name: Build Gitbook Pages
-
-# 触发条件，在 Push 到 Master 分支后触发。
+name: Build and Publish My GitBook
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
 
-# 任务
-
 jobs:
-
   build-and-deploy:
-    runs-on: ubuntu-20.04
-    steps:
-# 安装依赖
-      - name: Install Dependencies version
-        run: npm --version
-      - name: 2. setup nodejs...
-        uses: actions/setup-node@v1
-        with:
-          node-version: '6'
-      - name: Install Dependencies
-        run: npm install gitbook-cli -g  
-      - name: Install Dependencies
-        run: gitbook install back-to-top-button 
-      - name: Install Dependencies
-        run: gitbook install pageview-count   
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    env:
+      MY_SECRET   : ${{secrets.GH_ACCESS_TOKEN}}
+      USER_NAME   : erdong
+      USER_EMAIL  : erdong@mail.erdong.site
+      BOOK_DIR    : /root
 
-## 检出代#码
-      - name: Checkout
-        uses: actions/checkout@v2
-#          
-## 清空目#录
-#      - name: Clean temp directory
-#        run: rm -rf *
-#        working-directory: ./docs
-      - name: build
-        run: gitbook build  && ls
-#
-#
+    steps:
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2.3.1
+
+    - name: Build and Deploy 🚀
+      uses: onejar99/gitbook-build-publish-action@v1.0.3
+
